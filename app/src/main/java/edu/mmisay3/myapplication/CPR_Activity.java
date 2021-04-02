@@ -5,13 +5,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.MediaController;
 import android.widget.TextView;
-import android.widget.VideoView;
 
 import org.w3c.dom.Text;
 
@@ -23,14 +20,13 @@ public class CPR_Activity extends AppCompatActivity {
     private Button btnNext;
     private Button btnBack;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_c_p_r_);
-
-
         fragmentManager = getSupportFragmentManager();
+
+
 
         textViewFragmentCount = (TextView) findViewById(R.id.textViewFragmentCount);
         textViewFragmentCount.setText("Fragment Count in Back Stack: " + fragmentManager.getBackStackEntryCount());
@@ -59,6 +55,11 @@ public class CPR_Activity extends AppCompatActivity {
                 fragmentManager.popBackStack();
             }
         });
+
+
+
+
+
     }
 
     private void addFragment(){
@@ -70,7 +71,8 @@ public class CPR_Activity extends AppCompatActivity {
             case 2: fragment = new ThirdFragment(); break;
             case 3: fragment = new FourthFragment(); break;
             case 4: fragment = new FifthFragment(); break;
-            case 5: fragment = new SixthFragment(); break;
+            case 6: fragment = new SeventhFragment();break;
+            case 7: fragment = new EightFragment(); break;
             default: fragment = new FirstFragment(); break;
         }
 

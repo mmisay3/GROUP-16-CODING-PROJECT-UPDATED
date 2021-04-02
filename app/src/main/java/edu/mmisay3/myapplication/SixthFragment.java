@@ -178,7 +178,7 @@ public class SixthFragment extends Fragment {
             if(mySong.isPlaying())
                 mySong.stop();
 
-            mySong = MediaPlayer.create(this.main_context,R.raw.bpm);
+            mySong = MediaPlayer.create(this.main_context, R.raw.bpm);
 
 
             textView2.setText("");
@@ -198,9 +198,9 @@ public class SixthFragment extends Fragment {
     {
         super.onAttach(context);
         this.main_context = context;
-        mySong = MediaPlayer.create(main_context,R.raw.bpm);
-        soundEffect = MediaPlayer.create(main_context,R.raw.ouch);
-        soundEffect_breathe = MediaPlayer.create(main_context,R.raw.breathe);
+        mySong = MediaPlayer.create(main_context, R.raw.bpm);
+        soundEffect = MediaPlayer.create(main_context, R.raw.ouch);
+        soundEffect_breathe = MediaPlayer.create(main_context, R.raw.breathe);
 
     }
 

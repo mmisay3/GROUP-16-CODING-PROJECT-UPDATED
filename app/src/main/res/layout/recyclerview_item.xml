@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:layout_margin="2dp"
-    app:cardBackgroundColor="@color/white"
+    app:cardBackgroundColor="@color/backgroundColor"
     app:cardCornerRadius="4dp">
 
     <RelativeLayout
@@ -29,7 +29,8 @@
             android:text="CourseName"
             android:textSize="20dp"
             android:textStyle="bold"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText"
+            android:textColor="@color/textColor"/>
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -54,7 +55,8 @@
             android:layout_marginStart="149dp"
             android:layout_marginBottom="25dp"
             android:text="50%"
-            android:textSize="10sp" />
+            android:textSize="10sp"
+            android:textColor="@color/textColor"/>
 
         <TextView
             android:id="@+id/lastVisitDate"
@@ -65,7 +67,8 @@
             android:layout_marginEnd="9dp"
             android:layout_marginBottom="9dp"
             android:ems="10"
-            android:text="00/00/00" />
+            android:text="00/00/00"
+            android:textColor="@color/textColor"/>
 
     </RelativeLayout>
 
