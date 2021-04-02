@@ -9,32 +9,33 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="376dp"
-        android:layout_height="434dp"
+        android:layout_width="342dp"
+        android:layout_height="413dp"
         android:layout_marginStart="13dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
         android:text="CPR stands for cardiopulmonary resuscitation and it is an
 emergency procedure that requires the execution of chest compressions in an effort
 to manually preserve intact brain function until further steps are taken to restore
 continuous blood circulation and breathing in a person."
-        android:textSize="30dp"
+        android:textSize="26dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintHorizontal_bias="0.363"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="382dp"
-        android:layout_height="251dp"
+        android:layout_width="326dp"
+        android:layout_height="197dp"
         android:layout_marginBottom="21dp"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/cpr_img2" />
     "an emergency procedure that combines chest "
         app:layout_constraintBottom_toBottomOf="parent"

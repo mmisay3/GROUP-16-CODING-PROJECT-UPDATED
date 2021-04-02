@@ -55,7 +55,7 @@ public class SixthFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_second,container,false);
+        View view = inflater.inflate(R.layout.fragment_sixth,container,false);
 
         textView1 = (TextView)view.findViewById(R.id.textView);
         textView2 = (TextView)view.findViewById(R.id.textView2);
