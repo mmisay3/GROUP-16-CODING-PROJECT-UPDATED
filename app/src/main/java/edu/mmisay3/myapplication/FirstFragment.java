@@ -20,7 +20,7 @@ public class FirstFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
     }
-
+    //comment
     // Called when fragment must generate its visual display for the first time (returns a View)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
