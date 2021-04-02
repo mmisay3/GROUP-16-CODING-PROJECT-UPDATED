@@ -30,6 +30,8 @@ public class SecondFragment extends Fragment {
     private Button my_wrong_button7;
     private Button my_wrong_button8;
 
+    private Button my_correct_button1;
+
     private Button my_music_on;
     private Button my_music_off;
 
@@ -67,9 +69,20 @@ public class SecondFragment extends Fragment {
         my_wrong_button6 = (Button)view.findViewById(R.id.wrong_button6);
         my_wrong_button7 = (Button)view.findViewById(R.id.wrong_button7);
         my_wrong_button8 = (Button)view.findViewById(R.id.wrong_button8);
+        my_correct_button1 = (Button)view.findViewById(R.id.correct_button1);
 
         my_music_on = (Button)view.findViewById(R.id.MusicOn);
         my_music_off = (Button)view.findViewById(R.id.MusicOff);
+
+
+        my_correct_button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textView1.setText("WOW GOOD JOB!");
+                textView1.setTextColor(Color.BLUE);
+                soundEffect_breathe.start();
+            }
+        });
 
 
         my_wrong_button1.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +90,7 @@ public class SecondFragment extends Fragment {
             public void onClick(View v) {
                 textView1.setText("I CAN'T BREATHE!");
                 textView1.setTextColor(Color.RED);
-                //soundEffect.start();
+                soundEffect.start();
             }
         });
 
@@ -87,7 +100,7 @@ public class SecondFragment extends Fragment {
             public void onClick(View v) {
                 textView1.setText("WHAT ARE YOU DOING?!");
                 textView1.setTextColor(Color.RED);
-               // soundEffect.start();
+                soundEffect.start();
 
             }
         });
@@ -97,7 +110,7 @@ public class SecondFragment extends Fragment {
             public void onClick(View v) {
                 textView1.setText("I'M GOING TO DIE!");
                 textView1.setTextColor(Color.RED);
-                //soundEffect.start();
+                soundEffect.start();
 
             }
         });
@@ -107,7 +120,7 @@ public class SecondFragment extends Fragment {
             public void onClick(View v) {
                 textView1.setText("AHHH, YOU ARE NOT HELPING!");
                 textView1.setTextColor(Color.RED);
-               // soundEffect.start();
+                soundEffect.start();
 
             }
         });
@@ -117,7 +130,7 @@ public class SecondFragment extends Fragment {
             public void onClick(View v) {
                 textView1.setText("FIND SOMEONE ELSE!");
                 textView1.setTextColor(Color.RED);
-                //soundEffect.start();
+                soundEffect.start();
 
             }
         });
@@ -127,7 +140,7 @@ public class SecondFragment extends Fragment {
             public void onClick(View v) {
                 textView1.setText("THAT'S NOT DOING ANYTHING!");
                 textView1.setTextColor(Color.RED);
-                //soundEffect.start();
+                soundEffect.start();
 
             }
         });
@@ -137,7 +150,7 @@ public class SecondFragment extends Fragment {
             public void onClick(View v) {
                 textView1.setText("THAT'S MY ABDOMINAL!");
                 textView1.setTextColor(Color.RED);
-                //soundEffect.start();
+                soundEffect.start();
 
             }
         });
@@ -147,7 +160,7 @@ public class SecondFragment extends Fragment {
             public void onClick(View v) {
                 textView1.setText("THAT'S NOT EVEN MY BODY!");
                 textView1.setTextColor(Color.RED);
-                //soundEffect.start();
+                soundEffect.start();
 
             }
         });
@@ -156,7 +169,7 @@ public class SecondFragment extends Fragment {
             @Override
             public void onClick(View v) {
                         mySong.start();
-                        textView2.setText("Follow the rythm!");
+                        textView2.setText("Follow the rythm!(100 bpm)");
             }
         });
 
@@ -186,22 +199,11 @@ public class SecondFragment extends Fragment {
         super.onAttach(context);
         this.main_context = context;
         mySong = MediaPlayer.create(main_context,R.raw.bpm);
+        soundEffect = MediaPlayer.create(main_context,R.raw.ouch);
+        soundEffect_breathe = MediaPlayer.create(main_context,R.raw.breathe);
 
     }
 
 
-//    public void music_on_press(View view) {
-//
-//        mySong.start();
-//        textView2.setText("Follow the rythm!");
-//
-//    }
-//
-//    public void music_off_press(View view) {
-//        if(mySong.isPlaying())
-//            mySong.stop();
-//        mySong = MediaPlayer.create(MainActivity.this,R.raw.bpm);
-//        textView2.setText("");
-//    }
 
 }

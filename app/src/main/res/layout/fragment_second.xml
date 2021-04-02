@@ -31,18 +31,19 @@
 <!--        android:onClick="wrong_button_pressed1"-->
 
 
+    <!--        android:onClick="wrong_button_pressed2"-->
+
+
     <Button
         android:id="@+id/wrong_button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="232dp"
         android:background="@android:color/transparent"
         android:text="2"
         app:layout_constraintStart_toEndOf="@+id/wrong_button1"
         app:layout_constraintTop_toTopOf="parent" />
-<!--        android:onClick="wrong_button_pressed2"-->
-
 
     <Button
         android:id="@+id/wrong_button3"

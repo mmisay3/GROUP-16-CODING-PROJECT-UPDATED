@@ -61,6 +61,8 @@ public class CPR_Activity extends AppCompatActivity {
         switch(fragmentManager.getBackStackEntryCount()){
             case 0: fragment = new FirstFragment(); break; // If there is 0 fragment in the backstack, add FirstFragment
             case 1: fragment = new SecondFragment(); break; // If a fragment already exist, add secondFragment onto stack
+
+            case 5: fragment = new SixthFragment(); break;
             default: fragment = new FirstFragment(); break;
         }
 
