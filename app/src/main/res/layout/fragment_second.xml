@@ -4,20 +4,173 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:background="@color/teal_700">
+    tools:context=".CPR_Activity">
 
-    <TextView
-        android:id="@+id/SecondFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Second Fragment"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/chest1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintVertical_bias="0.0" />
 
+    <Button
+        android:id="@+id/wrong_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:background="@android:color/transparent"
+        android:text="1"
+        app:layout_constraintBaseline_toBaselineOf="@+id/wrong_button2"
+        app:layout_constraintStart_toStartOf="parent" />
+<!--        android:onClick="wrong_button_pressed1"-->
+
+
+    <Button
+        android:id="@+id/wrong_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="296dp"
+        android:background="@android:color/transparent"
+        android:text="2"
+        app:layout_constraintStart_toEndOf="@+id/wrong_button1"
+        app:layout_constraintTop_toTopOf="parent" />
+<!--        android:onClick="wrong_button_pressed2"-->
+
+
+    <Button
+        android:id="@+id/wrong_button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:text="3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/wrong_button2"
+        app:layout_constraintEnd_toEndOf="parent" />
+<!--        android:onClick="wrong_button_pressed3"-->
+
+
+    <Button
+        android:id="@+id/correct_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@android:color/transparent"
+        android:text="4"
+        app:layout_constraintStart_toStartOf="@+id/wrong_button2"
+        app:layout_constraintTop_toBottomOf="@+id/wrong_button2" />
+<!--        android:onClick="correct_button_pressed"-->
+
+
+    <Button
+        android:id="@+id/wrong_button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:background="@android:color/transparent"
+        android:text="5"
+        app:layout_constraintBaseline_toBaselineOf="@+id/correct_button1"
+        app:layout_constraintStart_toStartOf="parent" />
+<!--        android:onClick="wrong_button_pressed4"-->
+
+
+    <Button
+        android:id="@+id/wrong_button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:text="6"
+        app:layout_constraintBaseline_toBaselineOf="@+id/correct_button1"
+        app:layout_constraintEnd_toEndOf="parent" />
+<!--        android:onClick="wrong_button_pressed5"-->
+
+
+    <Button
+        android:id="@+id/wrong_button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:background="@android:color/transparent"
+        android:text="7"
+        app:layout_constraintBaseline_toBaselineOf="@+id/wrong_button8"
+        app:layout_constraintStart_toStartOf="parent" />
+<!--        android:onClick="wrong_button_pressed6"-->
+
+
+    <Button
+        android:id="@+id/wrong_button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@android:color/transparent"
+        android:text="8"
+        app:layout_constraintStart_toStartOf="@+id/correct_button1"
+        app:layout_constraintTop_toBottomOf="@+id/correct_button1" />
+<!--        android:onClick="wrong_button_pressed7"-->
+
+
+    <Button
+        android:id="@+id/wrong_button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:text="9"
+        app:layout_constraintBaseline_toBaselineOf="@+id/wrong_button7"
+        app:layout_constraintEnd_toEndOf="parent" />
+<!--        android:onClick="wrong_button_pressed8"-->
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:text="Choose the correct area for CPR"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/MusicOn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="49dp"
+        android:text="ON"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/MusicOff" />
+<!--        android:onClick="music_on_press"-->
+
+
+    <Button
+        android:id="@+id/MusicOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="5dp"
+        android:text="OFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+       <!-- android:onClick="music_off_press"-->
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="66dp"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/MusicOn"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
