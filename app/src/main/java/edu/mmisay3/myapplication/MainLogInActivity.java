@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainLogInActivity extends AppCompatActivity {
+    // TESTING IF IT'S REALLY LOCAL
 
     final static Integer REQUEST_CODE_REGISTER_ACTIVITY = 1;
 

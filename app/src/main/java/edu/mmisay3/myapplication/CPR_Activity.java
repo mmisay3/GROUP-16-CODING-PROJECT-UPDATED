@@ -26,8 +26,6 @@ public class CPR_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_c_p_r_);
         fragmentManager = getSupportFragmentManager();
 
-
-
         textViewFragmentCount = (TextView) findViewById(R.id.textViewFragmentCount);
         textViewFragmentCount.setText("Fragment Count in Back Stack: " + fragmentManager.getBackStackEntryCount());
 
@@ -55,11 +53,6 @@ public class CPR_Activity extends AppCompatActivity {
                 fragmentManager.popBackStack();
             }
         });
-
-
-
-
-
     }
 
     private void addFragment(){
