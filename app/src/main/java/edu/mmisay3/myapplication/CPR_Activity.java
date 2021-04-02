@@ -71,6 +71,7 @@ public class CPR_Activity extends AppCompatActivity {
             case 2: fragment = new ThirdFragment(); break;
             case 3: fragment = new FourthFragment(); break;
             case 4: fragment = new FifthFragment(); break;
+            case 5: fragment = new SixthFragment(); break;
             case 6: fragment = new SeventhFragment();break;
             case 7: fragment = new EightFragment(); break;
             default: fragment = new FirstFragment(); break;
