@@ -4,61 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="@color/teal_700"
-    tools:context=".CPR_Activity" >
+    tools:context=".CPR_Activity">
+
 
     <TextView
-        android:id="@+id/textView9"
-        android:layout_width="349dp"
-        android:layout_height="106dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="1dp"
-        android:gravity="center"
-        android:text="Step-by-Step CPR Guide"
-        android:textSize="47dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="348dp"
-        android:layout_height="325dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:text="Step 1: Grasp the patient by the shoulders
-and shake briskly while shouting to the patient to wake up. Do this for
-only a couple seconds to insure you take all proper measures.
-\n\nStep 2: If the patient is still unresponsive, dial 911 immediately!
-\n\nStep 3: While you wait for help to come, tilt the patient's head back
-and check if the patient is breathing. If the patient is not breathing,
-then proceed to Step 4.
-\n\nStep 4: BEGIN CPR! Imagine that there is aline between the nipples
-and place your hands on the center of the chest right below that line.
-
-\n\nStep 5: PUSH hard and fast going at about two pushes per second.
-If you have had CPR training and are comfortable with giving rescue breaths,
-then push on the chest 30 times then give 2 rescue breaths
-\n\nStep 6: REPEAT Steps 4-5 until help has arrived!"
-        android:textSize="12.8dp"
-        android:textStyle="bold"
+        android:id="@+id/ThirdFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Third Fragment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="359dp"
-        android:layout_height="166dp"
-        android:layout_marginBottom="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:srcCompat="@drawable/screen_shot_2021_04_02_at_3_40_13_am" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
