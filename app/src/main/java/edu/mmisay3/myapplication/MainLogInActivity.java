@@ -11,9 +11,6 @@ import android.widget.Toast;
 
 public class MainLogInActivity extends AppCompatActivity {
 
-    // COMMENT HERE!!!!!
-
-
     final static Integer REQUEST_CODE_REGISTER_ACTIVITY = 1;
 
     static SystemDatabase SystemDataBase = new SystemDatabase();
