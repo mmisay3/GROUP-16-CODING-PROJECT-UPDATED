@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,32 +22,92 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 public class CourseListActivity extends AppCompatActivity {
+    public static final String TAG = "CourseListActivity";
     private CustomAdapter MyAdapter;
     private RecyclerView MyRecyclerView;
     private RecyclerView.LayoutManager MyLayoutManager;
-    public Vector<Course> CourseList;
+    public static Vector<Course> vectCourseList;
+
+    private User user;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate: ## ON CREATE!!");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle("Course Items");
+        setTitle("Course Selection");
+
+        vectCourseList = new Vector<>();
+
+
+        // PROBLEM: When starting this activity from CPR_Activity, the 
+        if(getIntent() != null && getIntent().getExtras() != null && getIntent().hasExtra(MainLogInActivity.MAIN_KEY)){
+            user = (User)getIntent().getSerializableExtra(MainLogInActivity.MAIN_KEY);
+            // displayToast("COURSE! size = " + user.CourseList.size());
+            copyArrayListToVector(user.CourseList, vectCourseList);
+        }
+
+        if(getIntent() != null && getIntent().getExtras() != null && getIntent().hasExtra(CPR_Activity.TAG)){
+            Log.d(TAG, "onCreate: ## PROGRESS RECEIVED FROM CPR!!!");
+            initializeVectorCourseList( );
+            Intent intent = getIntent();
+            Integer progressPercentage = intent.getIntExtra(CPR_Activity.TAG, 0);
+
+//            Bundle bundle = getIntent().getExtras();
+//            Integer progressPercentage = bundle.getInt(CPR_Activity.TAG, -1);
+            displayToast("progress = " + progressPercentage);
+            Log.d(TAG, ">> Received ProgressCount = " + progressPercentage);
+            vectCourseList.elementAt(CourseIndex.CPR.index).setProgressPercentage(progressPercentage);
+            vectCourseList.elementAt(CourseIndex.CPR.index).setLastVisitDate("Last Visit: " + LocalDate.now().toString());
+        }
+        else{
+            displayToast("No progress received.");
+        }
 
         // Initializes the Vector containing each individual course types
-        initializeVectorCourseList( );
-
-        // IF data received is not null
-            // CourseList.add(new Course("String Received", R.drawable.ic_android_black_24dp));
-
-        // IF admin has deleted a course (this activity receives boolean value  that wants to delete a course and name of the course)
-        deleteCourseByName("AED");
-
+        // initializeVectorCourseList( );
 
         // Instantiates the Recycler View
         buildRecyclerView( );
 
-        CourseList.elementAt(CourseIndex.CPR.index).setProgressPercentage(100);
+        // vectCourseList.elementAt(CourseIndex.CPR.index).setProgressPercentage(100);
+    }
+
+    @Override
+    protected void onStart() {
+        Log.d(TAG, "onStart: ## ON START");
+        super.onStart();
+    }
+
+    @Override
+    protected void onRestart() {
+        Log.d(TAG, "onRestart: ## ON RESTART");
+        super.onRestart();
+    }
+
+    @Override
+    protected void onResume() {
+        Log.d(TAG, "onResume: ## ON RESUME");
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        Log.d(TAG, "onPause: ## ON PAUSE!!");
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.d(TAG, "onStop: ## STOPPING!!!");
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.d(TAG, "onDestroy: ## DESTROYING!!");
+        super.onDestroy();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -54,17 +115,20 @@ public class CourseListActivity extends AppCompatActivity {
         MyRecyclerView = findViewById(R.id.MainActivity_recyclerView);
         MyRecyclerView.setHasFixedSize(true); // Increases performance of the app
         MyLayoutManager = new LinearLayoutManager(this);
-        MyAdapter = new CustomAdapter(CourseList);
+        MyAdapter = new CustomAdapter(vectCourseList);
         MyRecyclerView.setLayoutManager(MyLayoutManager);
         MyRecyclerView.setAdapter(MyAdapter);
 
         // Clicking the item on the list updates the Last Visit then proceeds to the specified Course
         // indicated by the CourseIndex Integer positions which ranges from CPR(0), AED(1), WFS(2), SSA(3), CC(4)
         MyAdapter.setOnItemClickListener(position -> {
-            CourseList.elementAt(position).setLastVisitDate("Last Visit: " + LocalDate.now().toString());
+            vectCourseList.elementAt(position).setLastVisitDate("Last Visit: " + LocalDate.now().toString());
             MyAdapter.notifyItemChanged(position);
 
-            if(position.equals(CourseIndex.CPR.index)){
+            if(position >= vectCourseList.size()){
+                displayToast("Invalid");
+            }
+            else if(position.equals(CourseIndex.CPR.index)){
                 displayToast("Opening CPR Activity");
                 Intent intent = new Intent(CourseListActivity.this, CPR_Activity.class);
                 startActivity(intent);
@@ -85,12 +149,13 @@ public class CourseListActivity extends AppCompatActivity {
     }
 
     public void initializeVectorCourseList( ){
-        CourseList = new Vector< >( );
-        CourseList.add(new Course("CPR", R.drawable.ic_android_black_24dp));
-        CourseList.add(new Course("AED", R.drawable.ic_android_black_24dp));
-        CourseList.add(new Course("Water and Fire Safety", R.drawable.ic_android_black_24dp));
-        CourseList.add(new Course("Scene and Safety Assessment", R.drawable.ic_android_black_24dp));
-        CourseList.add(new Course("Child Care", R.drawable.ic_android_black_24dp));
+         vectCourseList = new Vector< >( );
+
+        vectCourseList.add(new Course("CPR", R.drawable.courseimage1));
+        vectCourseList.add(new Course("AED", R.drawable.aedimage));
+        vectCourseList.add(new Course("Water and Fire Safety", R.drawable.firesafety));
+        vectCourseList.add(new Course("Scene and Safety Assessment", R.drawable.sceneandsafety));
+        vectCourseList.add(new Course("Child Care", R.drawable.childcare));
 
     }
 
@@ -104,9 +169,9 @@ public class CourseListActivity extends AppCompatActivity {
     }
 
     void deleteCourseByName(String name){
-        for(int i = 0; i < CourseList.size(); ++i){
-            if(CourseList.elementAt(i).GetCourseName().equals(name)){
-                CourseList.removeElementAt(i);
+        for(int i = 0; i < vectCourseList.size(); ++i){
+            if(vectCourseList.elementAt(i).GetCourseName().equals(name)){
+                vectCourseList.removeElementAt(i);
             }
         }
     }
@@ -138,4 +203,11 @@ public class CourseListActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void copyArrayListToVector(ArrayList<Course> arrayList, Vector<Course> courseList){
+        for(int i = 0; i < arrayList.size(); ++i){
+            courseList.add(arrayList.get(i));
+        }
+    }
+
 }

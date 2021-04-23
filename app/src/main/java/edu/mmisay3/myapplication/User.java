@@ -2,6 +2,8 @@ package edu.mmisay3.myapplication;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Vector;
 
 public class User implements Serializable {
     String firstName; //User's First name
@@ -13,6 +15,8 @@ public class User implements Serializable {
     String orgName; //Name of org or "none" if individual
     String position; //Admin, employee, or individual
 
+    private Boolean IsAdmin;
+    public ArrayList<Course> CourseList;
 
     public User(String firstName, String lastName, int age, String username, String password) {
         this.firstName = firstName;
@@ -20,47 +24,35 @@ public class User implements Serializable {
         this.age = age;
         this.username = username;
         this.password = password;
+        this.IsAdmin = false;
+        // CourseList = new Vector< >( );
     }
 
-
-    public String getFirstName() {
-        return firstName;
+    public void setDefaultCourseList( ){
+        CourseList = new ArrayList< >( );
+        CourseList.add(new Course("CPR", R.drawable.ic_android_black_24dp));
+        CourseList.add(new Course("AED", R.drawable.ic_android_black_24dp));
+        CourseList.add(new Course("Water and Fire Safety", R.drawable.ic_android_black_24dp));
+        CourseList.add(new Course("Scene and Safety Assessment", R.drawable.ic_android_black_24dp));
+        CourseList.add(new Course("Child Care", R.drawable.ic_android_black_24dp));
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public void initializeVector(ArrayList<Course> v){
+        CourseList = v;
     }
 
     public String getUsername() {
         return username;
     }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAdmin(Boolean val){
+        this.IsAdmin = val;
+    }
+    public boolean isAdmin( ){
+        return this.IsAdmin;
     }
 
     //Only do the following if they are part of an org

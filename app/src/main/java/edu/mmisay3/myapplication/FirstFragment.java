@@ -17,7 +17,6 @@ public class FirstFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
     //comment
     // Called when fragment must generate its visual display for the first time (returns a View)

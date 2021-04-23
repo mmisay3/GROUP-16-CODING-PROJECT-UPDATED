@@ -11,7 +11,8 @@
     <RelativeLayout
         android:layout_width="402dp"
         android:layout_height="match_parent"
-        android:layout_margin="4dp">
+        android:layout_margin="4dp"
+        android:background="?android:attr/colorBackground">
 
         <ImageView
             android:id="@+id/CourseImage"
@@ -27,10 +28,10 @@
             android:layout_toEndOf="@+id/CourseImage"
             android:padding="3dp"
             android:text="CourseName"
+            android:textColor="@color/textColor"
             android:textSize="20dp"
             android:textStyle="bold"
-            tools:ignore="HardcodedText"
-            android:textColor="@color/textColor"/>
+            tools:ignore="HardcodedText" />
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -55,8 +56,8 @@
             android:layout_marginStart="149dp"
             android:layout_marginBottom="25dp"
             android:text="50%"
-            android:textSize="10sp"
-            android:textColor="@color/textColor"/>
+            android:textColor="@color/textColor"
+            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/lastVisitDate"
@@ -68,7 +69,7 @@
             android:layout_marginBottom="9dp"
             android:ems="10"
             android:text="00/00/00"
-            android:textColor="@color/textColor"/>
+            android:textColor="@color/textColor" />
 
     </RelativeLayout>
 

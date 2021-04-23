@@ -21,7 +21,6 @@ public class QuestionLibrary {
             {"1 thumb", "2 thumbs", "3 thumbs"},
             {"1 inch","2 inches","3 inches"},
             {"1 cm","2 cm", "4 cm"}
-
     };
 
     public static String mCorrectAnswers[] = {"100","30 compression to 2 ventilation breaths","lower half of breast bone","2 thumbs","2 inches","4 cm"};

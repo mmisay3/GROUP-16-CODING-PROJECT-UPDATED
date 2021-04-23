@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 
 public class SeventhFragment extends Fragment {
 
-    private QuestionLibrary mQuestionLibrary = new QuestionLibrary();
+    public QuestionLibrary mQuestionLibrary = new QuestionLibrary();
 
     private TextView mScoreView;
     private TextView mQuestionView;
@@ -25,13 +25,17 @@ public class SeventhFragment extends Fragment {
     private Button mButtonChoice3;
 
     private String mAnswer;
-    private int mScore = 0;
+    public int mScore = 0;
+
     private int mQuestionNumber = 0;
+
+    public Integer GetScore(){
+        return this.mScore;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
     }
 

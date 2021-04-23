@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectCourseToAdd"
+    android:background="@color/purple_200">
+
+    <CheckBox
+        android:id="@+id/checkBoxCPR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CPR"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxAED"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxAED"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxAED"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <CheckBox
+        android:id="@+id/checkBoxAED"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AED"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxWFS"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxWFS"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxWFS"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxCPR" />
+
+    <CheckBox
+        android:id="@+id/checkBoxWFS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WFS"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxSSA"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxSSA"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxSSA"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxAED" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSSA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SSA"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxCC"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxCC"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxCC"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxWFS" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxSSA" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Select Courses"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Done"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxCC" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

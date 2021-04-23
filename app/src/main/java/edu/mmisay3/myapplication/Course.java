@@ -1,7 +1,9 @@
 package edu.mmisay3.myapplication;
 
 
-public class Course {
+import java.io.Serializable;
+
+public class Course implements Serializable {
     private String Name;
     private int ProgressPercentage;
     private String Date_LastVisit;

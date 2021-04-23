@@ -22,7 +22,7 @@ public class SystemDatabase {
 
     // Returns the index of the username (if found)
     // otherwise, returns -999 (not found)
-    private Integer searchUser(String _username){
+    public Integer searchUser(String _username){
         _username = _username.toLowerCase();
         for(int i = 0; i < usersStored; ++i){
             String username_dataBase = newuser.get(i).getUsername().toLowerCase();

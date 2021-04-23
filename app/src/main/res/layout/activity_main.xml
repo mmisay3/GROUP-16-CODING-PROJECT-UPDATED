@@ -11,9 +11,9 @@
         android:id="@+id/MainActivity_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/backgroundredgradient"
         android:padding="4dp"
-        android:background="@android:color/darker_gray"
-        android:scrollbars="vertical"/>
+        android:scrollbars="vertical" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
